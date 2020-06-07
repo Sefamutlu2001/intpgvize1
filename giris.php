@@ -1,56 +1,47 @@
-<?php include("ayar.php"); ?>
-<?php
-
-if ($_POST) 
-{
-
- $KullaniciAdi = $_POST[KullaniciAdi];
- $Sifre = $_POST[Sifre];
-
-
-   if  ( !empty($KullaniciAdi) && !empty($Sifre)  ) 
-   {
-
-        echo "Lütfen boş alan bırakmayınız";
-
-   }
-   else
-   {
-      $kontrol == mysql_query("SELECT * FROM kullanici WHERE KullaniciAdi = 'KullaniciAdi'");
-      
-       if (mysql_num_rows($kontrol) > 0) 
-       {
-
-         $parcala = mysql_fetch_array($kontrol);
-         $gSifre = $parcala['Sifre']
-
-         if ($gSifre == $sifre ) 
-         {
-          echo "Giriş başarılı";
-          header("Location : Yorum Ve Öneri.html ");
-         }
-         else
-         {
-            echo "girdiginiz sifre yanlis";
-            header("Location:yanlis.php");
-         }
-         
-       }
-       else
-       {
-         echo "Böyle bir kullanıcı bulunamadı.";
-       }
-   
-
-
-
-   }
-
-
-}
-
-else
-{
-}
-
+<?php 
+include 'Ust_bilgi.php'
 ?>
+
+<div class="bır">
+	<form>
+    <table>
+    	<tr>
+            <td ></td>  
+            <td height="30">Giriş Yapınız </td>
+        </tr>
+
+        <tr>
+            <td height="30">Kullanıcı adı Giriniz </td>
+            <td ><input class="text" type="text" name="soy" size="38" maxlength="15"></td>  
+        </tr>
+
+		<tr>
+		    <td height="30">Şifre Giriniz </td>
+			<td ><input class="text" type="password" name="sifre" size="38" maxlength="10"></td>
+        </tr>
+
+        <tr>       
+            <td ></td>
+            <td height="30"><button>Giriş Yap</button></td>
+        </tr>
+
+
+    </table>
+  </form>
+
+</div>
+
+<div class="ıkı"></div>
+
+<div class="uc"></div>
+
+<div class="dort"></div>
+
+<div class="bes"></div>
+
+
+
+
+</div>
+</body>
+</html>
